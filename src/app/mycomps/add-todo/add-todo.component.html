@@ -1,0 +1,29 @@
+<div class="my-3 mx-3">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="todoTitle">Title</label>
+      <input
+      type="text"
+        [(ngModel)]="title"
+        class="form-control"
+        id="todoTitle"
+        aria-describedby="Todo"
+        placeholder="Enter Todo Title"
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="todoDescription">Description</label>
+      <input
+        [(ngModel)]="description"
+        name="description"
+        type="text"
+        class="form-control"
+        id="todoDescription"
+        placeholder="Description"
+      />
+    </div>
+    <div class="form-check"></div>
+    <button type="submit" class="btn btn-primary">Add Todo</button>
+  </form>
+</div>

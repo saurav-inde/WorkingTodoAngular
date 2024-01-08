@@ -1,0 +1,34 @@
+<div style="padding-left: 15%; padding-right: 15%">
+  <h3>Add a new Todo</h3>
+  <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+  <h3>Your Todo Items</h3>
+  <div  *ngIf="this.todos.length === 0; else elseBlock" class="my-3 mx-3">No Todos To Display</div>
+  <ng-template #elseBlock>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        *ngFor="let todo of todos"
+        style="
+          display: flex;
+          flex-direction: row;
+          width: fit-content;
+          margin: 16px;
+        "
+      >
+        <app-todo-item
+          [todo]="todo"
+          (todoDelete)="deleteTodo($event)"
+        ></app-todo-item>
+      </div>
+    </div>
+  </ng-template>
+</div>
